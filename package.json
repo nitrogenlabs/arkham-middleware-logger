@@ -1,0 +1,73 @@
+{
+  "name": "@nlabs/arkhamjs-middleware-logger",
+  "version": "1.0.2",
+  "description": "Add console logging for ArkhamJS",
+  "license": "MIT",
+  "main": "index.js",
+  "types": "./lib/index.d.ts",
+  "typings": "lib/index",
+  "keywords": [
+    "arkhamjs",
+    "flux",
+    "logging",
+    "nitrogenlabs"
+  ],
+  "author": "Giraldo Rosales <giraldo@nitrogenlabs.com> (http://nitrogenlabs.com/)",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nitrogenlabs/arkhamjs-middleware-logger.git"
+  },
+  "homepage": "http://www.arkhamjs.io",
+  "bugs": {
+    "url": "https://github.com/nitrogenlabs/arkhamjs-middleware-logger/issues"
+  },
+  "scripts": {
+    "compile": "tsc",
+    "docs": "typedoc --target ES5 --module commonjs --out docs/ src/ --exclude src/index.ts --excludeExternals --hideGenerator",
+    "lint": "tslint -c tslint.json -p tslint.json 'src/**/*.{ts,tsx}'",
+    "prepublishOnly": "NODE_ENV=production npm test && npm run compile",
+    "pretest": "npm run lint",
+    "test": "jest"
+  },
+  "peerDependencies": {
+    "arkhamjs": "^3.1.3",
+    "lodash": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^22.0.0",
+    "@types/node": "^8.5.2",
+    "arkhamjs": "^3.1.2",
+    "jest": "^22.0.4",
+    "lodash": "^4.17.4",
+    "ts-jest": "^22.0.0",
+    "tslint": "^5.8.0",
+    "tslint-eslint-rules": "^4.1.1",
+    "typedoc": "^0.9.0",
+    "typescript": "^2.6.2"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "setupFiles": [
+      "<rootDir>/jest.setup.js"
+    ],
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testMatch": [
+      "<rootDir>/src/**/*test.ts?(x)"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/dist/"
+    ],
+    "verbose": false
+  },
+  "directories": {
+    "doc": "docs"
+  }
+}
