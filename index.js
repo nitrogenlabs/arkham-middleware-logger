@@ -4,9 +4,4 @@
  */
 'use strict';
 
-var lib = require('./lib');
-
-// Logger
-exports.Logger = lib.Logger;
-exports.LoggerDebugLevel = lib.LoggerDebugLevel;
-exports.LoggerOptions = lib.LoggerOptions;
+module.exports = require('./lib');

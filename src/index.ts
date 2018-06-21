@@ -4,8 +4,7 @@
  */
 
 // Framework
-export {
-  Logger,
-  LoggerDebugLevel,
-  LoggerOptions
-} from './Logger/Logger';
+export {Logger} from './Logger/Logger';
+
+// Types
+export {LoggerDebugLevel, LoggerOptions} from './types/main';

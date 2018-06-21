@@ -4,16 +4,10 @@
  */
 
 import {FluxAction} from 'arkhamjs';
-import {cloneDeep, isEqual} from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
+import isEqual from 'lodash/isEqual';
 
-export enum LoggerDebugLevel {DISABLED, LOGS, DISPATCH}
-
-export interface LoggerOptions {
-  readonly debugLevel?: LoggerDebugLevel;
-  readonly debugErrorFnc?: (debugLevel: number, ...args) => void;
-  readonly debugInfoFnc?: (debugLevel: number, ...args) => void;
-  readonly debugLogFnc?: (debugLevel: number, ...args) => void;
-}
+import {LoggerDebugLevel, LoggerOptions} from '../types/main';
 
 /**
  * FluxLogger

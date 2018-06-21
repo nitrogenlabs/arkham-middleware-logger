@@ -21,10 +21,10 @@
     "url": "https://github.com/nitrogenlabs/arkhamjs-middleware-logger/issues"
   },
   "scripts": {
-    "compile": "lex compile",
+    "build": "lex compile",
     "lint": "eslint ./src --ext .ts,.tsx",
-    "prepublishOnly": "yarn test && yarn compile",
-    "pretest": "npm run lint",
+    "prepublishOnly": "yarn test && yarn build",
+    "pretest": "yarn lint",
     "reset": "lex clean && yarn",
     "test": "lex test",
     "update": "yarn upgrade-interactive --latest"
