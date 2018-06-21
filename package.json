@@ -1,11 +1,10 @@
 {
   "name": "@nlabs/arkhamjs-middleware-logger",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Add console logging for ArkhamJS",
   "license": "MIT",
   "main": "index.js",
   "types": "./lib/index.d.ts",
-  "typings": "lib/index",
   "keywords": [
     "arkhamjs",
     "flux",
@@ -22,52 +21,26 @@
     "url": "https://github.com/nitrogenlabs/arkhamjs-middleware-logger/issues"
   },
   "scripts": {
-    "compile": "tsc",
-    "docs": "typedoc --target ES5 --module commonjs --out docs/ src/ --exclude src/index.ts --excludeExternals --hideGenerator",
-    "lint": "tslint -c tslint.json -p tslint.json 'src/**/*.{ts,tsx}'",
-    "prepublishOnly": "NODE_ENV=production npm test && npm run compile",
+    "compile": "lex compile",
+    "lint": "eslint ./src --ext .ts,.tsx",
+    "prepublishOnly": "yarn test && yarn compile",
     "pretest": "npm run lint",
-    "test": "jest"
+    "reset": "lex clean && yarn",
+    "test": "lex test",
+    "update": "yarn upgrade-interactive --latest"
   },
   "peerDependencies": {
-    "arkhamjs": "^3.1.3",
     "lodash": "^4.0.0"
   },
   "devDependencies": {
-    "@types/jest": "^22.0.0",
-    "@types/node": "^8.5.2",
-    "arkhamjs": "^3.1.2",
-    "jest": "^22.0.4",
-    "lodash": "^4.17.4",
-    "ts-jest": "^22.0.0",
-    "tslint": "^5.8.0",
-    "tslint-eslint-rules": "^4.1.1",
-    "typedoc": "^0.9.0",
-    "typescript": "^2.6.2"
+    "@types/jest": "^23.1.1",
+    "@types/node": "^10.3.4",
+    "eslint": "^4.19.1",
+    "eslint-config-styleguidejs": "^0.7.5",
+    "lodash": "^4.17.10",
+    "typescript": "^2.9.2"
   },
-  "jest": {
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
-    "setupFiles": [
-      "<rootDir>/jest.setup.js"
-    ],
-    "testURL": "http://localhost",
-    "transform": {
-      "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
-    },
-    "testMatch": [
-      "<rootDir>/src/**/*test.ts?(x)"
-    ],
-    "testPathIgnorePatterns": [
-      "<rootDir>/node_modules/",
-      "<rootDir>/dist/"
-    ],
-    "verbose": false
-  },
-  "directories": {
-    "doc": "docs"
+  "dependencies": {
+    "arkhamjs": "^3.5.6"
   }
 }
