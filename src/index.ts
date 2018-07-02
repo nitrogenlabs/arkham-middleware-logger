@@ -4,6 +4,6 @@
  */
 
 import {Logger} from './Logger/Logger';
-import {LoggerDebugLevel, LoggerOptions} from './types/main';
 
-export {Logger, LoggerDebugLevel, LoggerOptions};
+export * from './types/main';
+export {Logger};
