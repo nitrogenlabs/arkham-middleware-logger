@@ -1,6 +1,6 @@
 {
   "name": "@nlabs/arkhamjs-middleware-logger",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Add console logging for ArkhamJS",
   "license": "MIT",
   "main": "index.js",
